@@ -3,3 +3,6 @@
 /card_data.json
 /art_rare
 /__pycache__
+*.npy
+*.ann
+*.bin
