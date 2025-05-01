@@ -1,0 +1,6 @@
+tensorflow>=2.10
+opencv-python-headless
+numpy
+hnswlib
+Pillow
+scikit-image
