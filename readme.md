@@ -21,7 +21,7 @@ A system for recognizing Pokemon cards using deep learning and image matching te
 
 1. Clone the repository:
 \`\`\`bash
-git clone https://github.com/yourusername/pokemon-card-recognition.git
+git clone https://github.com/RichardFelix999/pokemon_card_embedding/tree/intergrate_v0.git
 cd pokemon-card-recognition
 \`\`\`
 
