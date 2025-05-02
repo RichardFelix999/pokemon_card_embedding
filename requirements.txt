@@ -1,6 +1,9 @@
 tensorflow>=2.10
-opencv-python-headless
+opencv-python
 numpy
 hnswlib
 Pillow
 scikit-image
+tqdm
+matplotlib
+requests
