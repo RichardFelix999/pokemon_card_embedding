@@ -107,9 +107,9 @@ def detect_and_crop_card(image_path):
         return None
     
     # Check aspect ratio (Pokemon cards have ~2.5:3.5 ratio)
-    aspect_ratio = h / w
-    if not (0.6 < aspect_ratio < 0.85):  # Allow some tolerance
-        return None
+    # aspect_ratio = h / w
+    # if not (0.6 < aspect_ratio < 0.85):  # Allow some tolerance
+    #     return None
     
     # Crop the image
     cropped = image[y:y+h, x:x+w]

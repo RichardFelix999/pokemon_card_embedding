@@ -45,7 +45,7 @@ mkdir -p card_images input
 4. Prepare your data:
    - Place your Pokemon card images in the `card_images` directory
    - Name them according to their product IDs (e.g., `sm10-60.jpg`)
-   - Place your card data JSON file as `test_data.json` in the root directory
+   - Place your card data JSON file as `card_data.json` in the root directory
 
 ## Usage
 

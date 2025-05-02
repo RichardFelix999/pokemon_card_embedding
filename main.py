@@ -106,7 +106,7 @@ def build_database():
     database_features = []
     database_meta = []
 
-    with open("test_data.json") as f:
+    with open("card_data.json") as f:
         card_data = json.load(f)["results"]
 
     print_colored("\n⚙️ Starting database creation...", "blue")
@@ -206,8 +206,10 @@ def search(query_path, index, features, meta, card_data):
     # Detect and crop card
     cropped = detect_and_crop_card(query_path)
     if cropped is None:
-        print_colored("❌ No card detected in the image", "red")
-        return []
+        print_colored("⚠️ No card detected, using original image", "yellow")
+        cropped = cv2.imread(query_path)
+        # print_colored("❌ No card detected in the image", "red")
+        # return []
     
     # Save cropped image temporarily
     temp_path = os.path.join(QUERY_DIR, "temp_cropped.jpg")
@@ -229,7 +231,7 @@ def search(query_path, index, features, meta, card_data):
     print_colored("🔬 Verifying matches...", "blue")
     
     for i, d in tqdm(zip(indices[0], distances[0]), total=len(indices[0]), desc="Verification"):
-        if d > 0.2:
+        if d > 0.6:
             continue
             
         db_path = os.path.join(DATABASE_DIR, meta[i]["file_name"])
@@ -238,7 +240,7 @@ def search(query_path, index, features, meta, card_data):
             orb_score = verify_with_orb(query_path_processed, db_path)
             pbar.update()
         
-        if orb_score < 0.85:
+        if orb_score < 0.6:
             continue
             
         results.append({
@@ -325,7 +327,7 @@ def main():
         with ProgressLogger(3, "Loading Artifacts") as pbar:
             index, features, meta = load_artifacts()
             pbar.update()
-            with open("test_data.json") as f:
+            with open("card_data.json") as f:
                 card_data = json.load(f)["results"]
             pbar.update()
             pbar.update()
@@ -346,7 +348,7 @@ def main():
         with ProgressLogger(3, "Loading Artifacts") as pbar:
             index, features, meta = load_artifacts()
             pbar.update()
-            with open("test_data.json") as f:
+            with open("card_data.json") as f:
                 card_data = json.load(f)["results"]
             pbar.update()
             pbar.update()
