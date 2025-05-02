@@ -142,3 +142,11 @@ If cards are not being detected properly:
 - `utils.py`: Utility functions for image processing and feature extraction
 - `requirements.txt`: Dependencies for Linux/Mac
 - `requirements-windows.txt`: Dependencies for Windows
+
+## GPU setup
+-CUDA
+Invoke-WebRequest -Uri "https://developer.download.nvidia.com/compute/cuda/12.3.2/network_installers/cuda_12.3.2_windows_network.exe" -OutFile "cuda_12.3.2_windows_network.exe"
+
+
+
+#C:\Users\codyi

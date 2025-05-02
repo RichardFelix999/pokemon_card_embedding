@@ -1,6 +1,6 @@
 /card_images
 /.venv
-/test_data.json
+/card_data.json
 /art_rare
 /__pycache__
 *.json

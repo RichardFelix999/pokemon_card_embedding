@@ -7,6 +7,7 @@ import json
 import numpy as np
 import tensorflow as tf
 import cv2
+print(cv2.__version__)
 import time
 import argparse
 from tqdm import tqdm

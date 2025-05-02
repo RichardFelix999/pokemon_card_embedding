@@ -5,7 +5,7 @@ from tqdm import tqdm
 
 os.makedirs("card_images", exist_ok=True)
 
-with open("test_data.json", "r", encoding="utf-8") as f:
+with open("card_data.json", "r", encoding="utf-8") as f:
     data = json.load(f)["results"]
 
 for card in tqdm(data, desc="Downloading Images"):
