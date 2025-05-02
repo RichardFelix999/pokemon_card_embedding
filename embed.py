@@ -7,7 +7,7 @@ import tensorflow as tf
 
 # Configuration
 DATABASE_DIR = "card_images"
-CARD_DATA_PATH = "card_data.json"
+CARD_DATA_PATH = "test_data.json"
 MODEL_NAME = "card_search_model_v2"
 
 # Enhanced Model Architecture

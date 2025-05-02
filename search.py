@@ -51,7 +51,7 @@ def search(query_path, index, features, meta, card_data):
             "card_data": card_data[meta[i]["json_id"]]
         })
     
-    return sorted(results, key=lambda x: x['distance'])[:5]
+    return sorted(results, key=lambda x: x['distance'])[:2]
 
 def display_results(results):
     for i, r in enumerate(results):
@@ -62,10 +62,8 @@ def display_results(results):
         print(f"Card Name: {r['card_data'].get('name', 'N/A')}")
         
         img = cv2.imread(r['image_path'])
-        cv2.imshow(f"Match {i+1}", cv2.resize(img, (600, 600)))
-    
-    cv2.waitKey(0)
-    cv2.destroyAllWindows()
+        cv2.imwrite(f"match_{i+1}_{r['product_id']}.jpg", img)  # Save instead of show
+        print(f"Saved match image to: match_{i+1}_{r['product_id']}.jpg")
 
 if __name__ == "__main__":
     index, features, meta = load_artifacts()
